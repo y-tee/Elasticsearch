@@ -11,6 +11,16 @@ the sample `docker-compose.yml` file in the documentation does not work, refer t
 but do not replace `kibana.yml` file as stated. The guy changed `elasticsearch.hosts` from `https://localhost:9200` to `https://odfe-node1:9200` which is causing main problems in kibana ui:all icons are clickable but only show the ES server stats
 
 
+#### Health check and indices check
+```
+GET _cluster/health?pretty
+```
+
+Indices check desc
+```
+GET /_cat/indices?bytes=b&s=store.size:desc&v
+```
+
 
 #### Queries
 1. Get a field, sorted desc
