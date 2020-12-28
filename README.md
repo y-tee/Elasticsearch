@@ -24,6 +24,10 @@ Nodes and usage check
 ```
 GET /_cat/nodes?v
 ```
+Indices alias
+```
+GET /_cat/aliases
+```
 
 #### Queries
 1. Get a field, sorted desc
