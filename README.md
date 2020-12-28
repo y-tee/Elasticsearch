@@ -20,7 +20,10 @@ Indices check desc
 ```
 GET /_cat/indices?bytes=b&s=store.size:desc&v
 ```
-
+Nodes and usage check
+```
+GET /_cat/nodes?v
+```
 
 #### Queries
 1. Get a field, sorted desc
