@@ -44,3 +44,26 @@ POST /<index name>/_search
   ]
 }
 ```
+
+2. Query json in arrays in nested field [link](https://www.monterail.com/blog/how-to-index-objects-elasticsearch)
+```
+GET <index name>/_search
+{
+  "query": {
+    "nested": {
+        "path": "<array key>",
+        "query":{
+        "bool": {
+          "filter": [
+            {
+              "match": {
+                "<array key>.<key wanted in array>": <value>
+              }
+            }
+          ]
+        }
+      }
+    }
+  }  
+}
+
