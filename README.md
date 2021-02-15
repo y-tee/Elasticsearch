@@ -32,7 +32,7 @@ GET /_cat/aliases
 #### Queries
 1. Get a field, sorted desc
 ```
-POST /<index name>/_search
+GET /<index name>/_search
 {
   "_source": "<field name>",
   "sort":[
@@ -66,4 +66,26 @@ GET <index name>/_search
     }
   }  
 }
+```
 
+3. Query based on date
+```
+GET <index_name>/_search
+{
+  "query": {
+    "bool": {
+      "must":[ 
+              {
+                "range": {
+                  "updatedOn": {
+                    "gte": "2021-02-13T00:00:06.487000",
+                    "lte": "2021-02-14T00:00:06.487000"
+                  }
+                }
+              }
+      ]
+    }
+  },
+  "size": 10
+}
+```
