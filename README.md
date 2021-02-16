@@ -89,3 +89,15 @@ GET <index_name>/_search
   "size": 10
 }
 ```
+
+4. Query based on _id
+```
+GET <index>/_search
+{
+  "query": {
+    "terms": {
+      "_id": [ "<id>"] 
+    }
+  }
+}
+```
